@@ -42,7 +42,7 @@
     <body>
 	<div data-role="page" id="main-page">
 	  <div data-role="header">
-	    <h1> Cal Temerari </h1>
+			<h1 style="width: 50%;text-align: center;"><img style="display: inline;" src="img/logoct.png" alt="Cal Temerari" /></h1>
 	  </div>
 	  <div data-role="main" class="ui-content">
 	    <div data-role="content">
@@ -107,7 +107,7 @@
 					<legend>Aportació econòmica</legend>
 					<input type="radio" name="ap50" id="ap50" value="soci_protector" />
 					<label for="ap50">50 €/mes (Soci Protector)</label>
-					<input type="radio" name="ap20" id="ap20" value="soci_temerari" />
+					<input type="radio" name="ap20" id="ap20" value="soci_temerari" checked="checked"/>
 					<label for="ap20">20 €/mes (Soci Temerari)</label>
 					<input type="radio" name="ap10" id="ap10" value="soci_precari" />
 					<label for="ap10">10 €/mes (Quota per precàris)</label>

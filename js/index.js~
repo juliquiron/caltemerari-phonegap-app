@@ -70,8 +70,6 @@ var app = {
 					}
 				});
 
-				// Variable to control the button distribution on main grid
-				var block_column = 'a';
 				// Get and display activitats
 				$.get(url_activitats, function (data) {
 					var some_content = true;
@@ -90,25 +88,33 @@ var app = {
 					});
 					new_page += '</div>';
 					if(some_content == true) {
-						$('<div class="ui-block-a"><a data_role="button" data-inline="true" href="#activitats"><p><img src="img/soci.jpg" /><br />Activitats</p></a></div>').appendTo('#main_grid_buttons').enhanceWithin();
+						$('<div class="ui-block-a"><a data_role="button" data-inline="true" href="#activitats"><p><img src="img/activitats.jpg" /><br />Activitats</p></a></div>').appendTo('#main_grid_buttons').enhanceWithin();
 						$(new_page).appendTo('body').enhanceWithin();
-						block_column = 'b';
 					}
 					// botton to acces fer-se soci form
 					$('<div class="ui-block-b"><a data_role="button" data-inline="true" href="#soci-form"><p><img src="img/soci.jpg" /><br />Fer-me sòci/a</p></a></div>').appendTo('#main_grid_buttons').enhanceWithin();
+					$.get(url_inscripcions, function (data) {
+						var some_content = true;
+						var new_page = '';
+						new_page += '<div data-role="page" id="inscripcions">';
+						new_page += '<div data-role="header" data-add-back-btn="true" data-back-btn-text="&nbsp;"><h1 style="white-space: normal;">Cursos i tallers</h1></div>';
+						new_page += '<div data-role="main" class="ui-content">';
+						$(data).find('item').each(function () {
+							new_page += '<div data-iconpos="right" data-role="collapsible"><h4 style="white-space: normal !important;">' + $(this).find('title').text() + '</h4>';
+							new_page += '<ul data-role="listview" data-inset="false">';
+							new_page += '<li>' + $(this).find('pubDate').text() + '</li>';
+							new_page += '<li>' + $(this).find('description').text() + '</li>';
+							new_page += '<li><a href="'+ $(this).find('link').text() +'"><small>Més informació al web</small></a></li>';
+							new_page += '</ul></div>';
+							//if(some_content == false) { some_content = true; }
+						});
+						new_page += '</div>';
+						if(some_content == true) {
+							$('<div class="ui-block-b"><a data_role="button" data-inline="true" href="#inscripcions"><p><img src="img/cursos.jpg" /><br />Cursos i tallers</p></a></div>').appendTo('#main_grid_buttons').enhanceWithin();
+							$(new_page).appendTo('body').enhanceWithin();
+						}
+					});
 				});
-				block_column = 'a';
-
-			$('#soci_form').on('submit', function (e) {
-				alert('submit');
-				e.preventDefault();
-				
-				var data = new FormData();
-				$(this).find('input, textarea').each(function (i) {
-					alert(i);
-					alert($(this).val());
-				};
-			});
 
 
 
