@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+	<meta charset="UTF-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <title>Cal Temerari</title>
+    </head>
+    <body>
+	<div data-role="page" id="main-page">
+	  <div data-role="header">
+	    <h1> Cal Temerari </h1>
+	  </div>
+	  <div data-role="main" class="ui-content">
+	    <div data-role="content">
+		<!-- noticies -->
+		    <div data-role="collapsible" id="news_list">
+		      <h2> Últimes notícies <span class="ui-li-count" id="news_list_count">0</span> </h2>
+		      <ul data-role="listview" id="news_list_wrapper">
+						<li data-role="list-divider"> </li>
+		      </ul>
+		    </div>
+		<!-- funcions -->
+		    <form>
+		    <div class="ui-grid-a" id="main_grid_buttons">
+		      <!--div class="ui-block-a">
+						<a data-role="botton" data-inline="true" href="#">
+							<p><img src="img/restaurant.jpg" /><br /></p>
+						</a>
+		      </div>
+		      <div class="ui-block-b">
+						<a data-role="botton" data-inline="true" href="#soci-form">
+							<p><img src="img/soci.jpg" /><br />Fer-me sòci/a</p>
+						</a>
+		      </div-->
+		    </div>
+		    </form>
+	    </div><!-- /content-->
+	  </div>
+	  <div data-role="footer">
+			Més informació a: <a href="http://www.caltemerari.cat">www.caltemerari.cat</a>
+	  </div>
+	</div> <!-- /main-page -->
+	<div data-role="page" id="soci-form"> 
+	  <div data-role="header" data-add-back-btn="true" data-back-btn-text="&nbsp;">
+	    <h1> Fer-me sòci/a de Cal Temerari </h1>
+	  </div>
+	  <form action="#" method="get">
+	  <div data-role="main" class="ui-content">
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="nom">Noms i cognoms</label>
+	      <input type="text" name="nom" id="nom" value="" placeholder="Noms i cognoms" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="email">Correu electrònic</label>
+	      <input type="email" name="email" id="email" value="" placeholder="Correu electrònic" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="nif">NIF/NIE</label>
+	      <input type="text" name="nif" id="nif" value="" placeholder="NIF/NIE" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="data">Data de neixement</label>
+	      <input type="text" name="data" id="data" value="" placeholder="Data de neixement" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="adreca">Població, adreça i codi postal</label>
+	      <input type="text" name="adreca" id="adreca" value="" placeholder="Població, adreça i codi postal" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="tel">Telèfon</label>
+	      <input type="tel" name="tel" id="tel" value="" placeholder="Telèfon" />
+	    </div>
+	    <div data-role=fieldcontain">
+	      <fieldset data-role="controlgroup">
+		<legend>Aportació econòmica</legend>
+		<input type="radio" name="ap50" id="ap50" value="ap50" />
+		<label for="ap50">50 €/mes (Soci Protector)</label>
+		<input type="radio" name="ap20" id="ap20" value="ap20" />
+		<label for="ap20">20 €/mes (Soci Temerari)</label>
+		<input type="radio" name="ap10" id="ap10" value="ap10" />
+		<label for="ap10">10 €/mes (Quota per precàris)</label>
+		<input type="radio" name="ap5" id="ap5" value="ap5" />
+		<label for="ap5"><small>[5 €/mes (Quota simpatitzant)]</small></label>
+	      </fieldset>
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="iban">Número de compte (IBAN)</label>
+	      <input type="text" name="iban" id="iban" value="" placeholder="Número de compte (IBAN)" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="comentaris">Observacions i comentaris</label>
+	      <textarea cols="40" rows="3" name="comentaris" id="comentaris" placeholder="Observacions i comentaris"></textarea>
+	    </div>
+	    <input type="checkbox" name="condicons" id="condicions" class="custom" data-mini="true" />
+	    <label for="condicions">Accepto les condicions</label>
+	    <button type="submit" name="submit" value="submit-value">Envia</button>
+	    <br /><a href="pqsoci.html" data-role="button"><p><img src="img/pqsoci.jpg"><br />Perquè fer-me sòci/a<br />de Cal Temerari?</p></a>
+	  </div>
+	  </form>
+	</div> <!-- /soci-form -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
