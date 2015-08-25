@@ -33,13 +33,13 @@ var app = {
 				var url_activitats = base_url + 'agenda.rss';
 				var url_inscripcions = base_url + 'inscripcions.rss';
 				var home_static_pages = {
-					'sincrocoop': ['SincroCoop', 'img/soci.jpg', base_url + 'app/node/af11d480-efcb-4701-8393-f873ab94ba5b'],
-					'lacassola': ['La Cassola', 'img/soci.jpg', base_url + 'app/node/107c4463-822d-4ff7-aa53-5164de3e2c42'],
-					'lateulada': ['La Teulada', 'img/soci.jpg', base_url + 'app/node/edae7a13-2f86-4e7a-8261-586fdaa2b21c'],
-					'elcarro': ['El Carro', 'img/soci.jpg', base_url + 'app/node/0126f588-f7e7-495f-acf7-5f0394b93d0f'],
+					'sincrocoop': ['SincroCoop', 'img/sincrocoop.jpg', base_url + 'app/node/af11d480-efcb-4701-8393-f873ab94ba5b'],
+					'lacassola': ['La Cassola', 'img/lacassola.jpg', base_url + 'app/node/107c4463-822d-4ff7-aa53-5164de3e2c42'],
+					'lateulada': ['La Teulada', 'img/lateulada.jpg', base_url + 'app/node/edae7a13-2f86-4e7a-8261-586fdaa2b21c'],
+					'elcarro': ['El Carro', 'img/elcarro.jpg', base_url + 'app/node/0126f588-f7e7-495f-acf7-5f0394b93d0f'],
 					'lataverna': ['La Taverna', 'img/restaurant.jpg', base_url + 'app/node/de6c5a4c-76f0-4854-af0b-6388aa53783a'],
-					'lespai': ["L'espai", 'img/soci.jpg', base_url + 'app/node/e0d11b49-a0fa-4be8-9a91-974b17c0a3b0'],
-					'participar': ['Com participar', 'img/soci.jpg', base_url + 'app/node/cae0d87a-567c-4468-b119-494d40211eab']
+					'lespai': ["L'espai", 'img/lespai.jpg', base_url + 'app/node/e0d11b49-a0fa-4be8-9a91-974b17c0a3b0'],
+					'participar': ['Com participar', 'img/participar.jpg', base_url + 'app/node/cae0d87a-567c-4468-b119-494d40211eab']
 				};
 					
 				// Get and display news
