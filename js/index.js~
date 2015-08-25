@@ -77,10 +77,10 @@ var app = {
 					var some_content = true;
 					var new_page = '';
 					new_page += '<div data-role="page" id="activitats">';
-					new_page += '<div data-role="header" data-add-back-btn="true" data-back-btn-text="&nbsp;"><h1>Pròximes Activitats</h1></div>';
+					new_page += '<div data-role="header" data-add-back-btn="true" data-back-btn-text="&nbsp;"><h1 style="white-space: normal;">Pròximes Activitats</h1></div>';
 					new_page += '<div data-role="main" class="ui-content">';
 					$(data).find('item').each(function () {
-						new_page += '<div data-iconpos="right" data-role="collapsible"><h4>' + $(this).find('title').text() + '</h4>';
+						new_page += '<div data-iconpos="right" data-role="collapsible"><h4 style="white-space: normal !important;">' + $(this).find('title').text() + '</h4>';
 						new_page += '<ul data-role="listview" data-inset="false">';
 						new_page += '<li>' + $(this).find('pubDate').text() + '</li>';
 						new_page += '<li>' + $(this).find('description').text() + '</li>';
@@ -93,14 +93,23 @@ var app = {
 						$('<div class="ui-block-a"><a data_role="button" data-inline="true" href="#activitats"><p><img src="img/soci.jpg" /><br />Activitats</p></a></div>').appendTo('#main_grid_buttons').enhanceWithin();
 						$(new_page).appendTo('body').enhanceWithin();
 						block_column = 'b';
-alert($('#main_grid_buttons').html());
 					}
+					// botton to acces fer-se soci form
+					$('<div class="ui-block-b"><a data_role="button" data-inline="true" href="#soci-form"><p><img src="img/soci.jpg" /><br />Fer-me sòci/a</p></a></div>').appendTo('#main_grid_buttons').enhanceWithin();
 				});
-				// botton to acces fer-se soci form
-				$('<div class="ui-block-b"><a data_role="button" data-inline="true" href="#soci-form"><p><img src="img/soci.jpg" /><br />Fer-me sòci/a</p></a></div>').appendTo('#main_grid_buttons').enhanceWithin();
 				block_column = 'a';
 
-alert($('#main_grid_buttons').html());
+			$('#soci_form').on('submit', function (e) {
+				alert('submit');
+				e.preventDefault();
+				
+				var data = new FormData();
+				$(this).find('input, textarea').each(function (i) {
+					alert(i);
+					alert($(this).val());
+				};
+			});
+
 
 
 				// Rebuilt theme styles

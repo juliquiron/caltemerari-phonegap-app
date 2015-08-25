@@ -54,7 +54,6 @@
 		      </ul>
 		    </div>
 		<!-- funcions -->
-		    <form>
 		    <div class="ui-grid-a" id="main_grid_buttons">
 		      <!--div class="ui-block-a">
 						<a data-role="botton" data-inline="true" href="#">
@@ -67,7 +66,6 @@
 						</a>
 		      </div-->
 		    </div>
-		    </form>
 	    </div><!-- /content-->
 	  </div>
 	  <div data-role="footer">
@@ -78,7 +76,7 @@
 	  <div data-role="header" data-add-back-btn="true" data-back-btn-text="&nbsp;">
 	    <h1 style="white-space: normal;"> Fer-me sòci/a de Cal Temerari </h1>
 	  </div>
-	  <form action="#" method="get">
+	  <form action="#" method="POST" id="soci_form" data-ajax="false">
 	  <div data-role="main" class="ui-content">
 	    <div data-role="fieldcontain" class="ui-hide-label">
 	      <label for="nom">Noms i cognoms</label>
@@ -106,15 +104,15 @@
 	    </div>
 	    <div data-role=fieldcontain">
 	      <fieldset data-role="controlgroup">
-		<legend>Aportació econòmica</legend>
-		<input type="radio" name="ap50" id="ap50" value="ap50" />
-		<label for="ap50">50 €/mes (Soci Protector)</label>
-		<input type="radio" name="ap20" id="ap20" value="ap20" />
-		<label for="ap20">20 €/mes (Soci Temerari)</label>
-		<input type="radio" name="ap10" id="ap10" value="ap10" />
-		<label for="ap10">10 €/mes (Quota per precàris)</label>
-		<input type="radio" name="ap5" id="ap5" value="ap5" />
-		<label for="ap5"><small>[5 €/mes (Quota simpatitzant)]</small></label>
+					<legend>Aportació econòmica</legend>
+					<input type="radio" name="ap50" id="ap50" value="soci_protector" />
+					<label for="ap50">50 €/mes (Soci Protector)</label>
+					<input type="radio" name="ap20" id="ap20" value="soci_temerari" checked="checked"/>
+					<label for="ap20">20 €/mes (Soci Temerari)</label>
+					<input type="radio" name="ap10" id="ap10" value="soci_precari" />
+					<label for="ap10">10 €/mes (Quota per precàris)</label>
+					<input type="radio" name="ap5" id="ap5" value="simpatitzant" />
+					<label for="ap5"><small>[15 €/trimestre (Quota simpatitzant)]</small></label>
 	      </fieldset>
 	    </div>
 	    <div data-role="fieldcontain" class="ui-hide-label">
@@ -125,14 +123,15 @@
 	      <label for="comentaris">Observacions i comentaris</label>
 	      <textarea cols="40" rows="3" name="comentaris" id="comentaris" placeholder="Observacions i comentaris"></textarea>
 	    </div>
-	    <input type="checkbox" name="condicons" id="condicions" class="custom" data-mini="true" />
+	    <input type="checkbox" name="condicons" id="condicions" value="acceptar_condicions" class="custom" data-mini="true" />
 	    <label for="condicions">Accepto les condicions</label>
-	    <button type="submit" name="submit" value="submit-value">Envia</button>
+	    <button type="submit" name="submit" value="submit-value" id="submit">Envia</button>
 	    <br /><a href="pqsoci.html" data-role="button"><p><img src="img/pqsoci.jpg"><br />Perquè fer-me sòci/a<br />de Cal Temerari?</p></a>
 	  </div>
 	  </form>
 	</div> <!-- /soci-form -->
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/form.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

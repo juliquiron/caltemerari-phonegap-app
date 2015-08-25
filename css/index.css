@@ -124,6 +124,9 @@ p,
 	white-space: normal !important;
 	text-transform: none;
 }
+h4 {
+	white-space: normal !important;
+}
 .ui-grid-a {
 }
 .ui-grid-a a {

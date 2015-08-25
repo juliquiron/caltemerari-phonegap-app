@@ -128,6 +128,6 @@ p,
 }
 .ui-grid-a a {
 	text-align: center;
-	color: #37c8ab;
+	color: #37c8ab !important;
 	text-decoration: none;
 }
