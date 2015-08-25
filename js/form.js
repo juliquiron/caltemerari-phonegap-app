@@ -47,7 +47,6 @@ $(document).on('pageinit', function() {
 			});
 
 			$('#i_form').on('submit', function (e) {
-				alert('submitcach');
 				if($(this).attr('data-c-submitted') === 'stop' ) {
 					e.preventDefault();
 				} else {
@@ -64,12 +63,17 @@ $(document).on('pageinit', function() {
 					var data = new FormData();
 					var cid = 1;
 					data.append('webform', '361bc09f-2e1e-4e00-8f71-ea8538ccd793');
-					$(this).find('input, textarea').each(function (i) {
-						if($(this).attr('type') == 'checkbox' && !$(this).is(':checked')) {
-							return; // next loop iteration
+					data.append('submission[data][1][values][0]', $(this).find('#nom').val());
+					data.append('submission[data][4][values][0]', $(this).find('#email').val());
+					data.append('submission[data][5][values][0]', $(this).find('#tel').val());
+					data.append('submission[data][2][values][0]', $(this).find('#nif').val());
+					data.append('submission[data][3][values][0]', $(this).find('#comentaris').val());
+					var valid = '0';
+					$(this).find('input[type=checkbox]').each(function() {
+						if($(this).is(':checked')) {
+							data.append('submission[data][6][values]['+valid+']', $(this).val());
+							valid++;
 						}
-						data.append('submission[data]['+cid+'][values][0]', $(this).val());
-						cid++;
 					});
 					$.ajax({
 						url: "http://caltemerari.cat/socisapp/submission",
@@ -93,5 +97,4 @@ $(document).on('pageinit', function() {
 
 			});
 
-		});
 		});
