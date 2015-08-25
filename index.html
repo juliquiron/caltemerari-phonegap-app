@@ -130,6 +130,54 @@
 	  </div>
 	  </form>
 	</div> <!-- /soci-form -->
+	<div data-role="page" id="inscripcions-form"> 
+	  <div data-role="header" data-add-back-btn="true" data-back-btn-text="&nbsp;">
+	    <h1 style="white-space: normal;"> Inscripcions </h1>
+	  </div>
+	  <form action="#" method="POST" id="i_form" data-ajax="false">
+	  <div data-role="main" class="ui-content">
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="nom">Noms i cognoms</label>
+	      <input type="text" name="nom" id="nom" value="" placeholder="Noms i cognoms" />
+	    </div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="email">Correu electrònic</label>
+	      <input type="email" name="email" id="email" value="" placeholder="Correu electrònic" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="nif">NIF/NIE</label>
+	      <input type="text" name="nif" id="nif" value="" placeholder="NIF/NIE" />
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="tel">Telèfon</label>
+	      <input type="tel" name="tel" id="tel" value="" placeholder="Telèfon" />
+	    </div>
+			<div data-role=fieldcontain">
+	      <fieldset data-role="controlgroup">
+					<legend>Inscriure'm a:</legend>
+					<input type="checkbox" name="c1" id="c1" value="robotica" />
+					<label for="c1">Robòtica per a infants i joves [90€]</label>
+					<input type="checkbox" name="c2" id="c2" value="historiastc" />
+					<label for="c2">Història de Sant Cugat a través de les lluites socials [10€]</label>
+					<input type="checkbox" name="c3" id="c3" value="catala" />
+					<label for="c3">Nivell D de català [60€]</label>
+					<input type="checkbox" name="c4" id="c4" value="noviolencia" />
+					<label for="c4">Aplicació de la pràctica marcial als principis de la no-violència [60€]</label>
+					<input type="checkbox" name="c5" id="c5" value="gleco" />
+					<label for="c5">Grup de lectura: “L’alternativa socialista” de Michael A. Lebowitz [gratuït]</label>
+					<input type="checkbox" name="c6" id="c6" value="glfem" />
+					<label for="c6">Grup de lectura: “Con voz propia”, articles en clau de gènere [gratuït]</label>
+					<input type="checkbox" name="c7" id="c7" value="glgramsci" />
+					<label for="c7">Grup de lectura: “Gramsci Reloaded”, el pensament de Gramsci fins l'actualitat [gratuït]</label>
+	      </fieldset>
+	    </div>
+	    <div data-role="fieldcontain" class="ui-hide-label">
+	      <label for="comentaris">Observacions i comentaris</label>
+	      <textarea cols="40" rows="3" name="comentaris" id="comentaris" placeholder="Observacions i comentaris"></textarea>
+	    </div>
+	    <button type="submit" name="submit" value="submit-value" id="submit">Envia</button>
+		</form>
+		</div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/form.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

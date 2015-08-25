@@ -104,7 +104,7 @@ var app = {
 							new_page += '<ul data-role="listview" data-inset="false">';
 							new_page += '<li>' + $(this).find('pubDate').text() + '</li>';
 							new_page += '<li>' + $(this).find('description').text() + '</li>';
-							new_page += '<li><a href="'+ $(this).find('link').text() +'"><small>Més informació al web</small></a></li>';
+							new_page += '<li><a href="#inscripcions-form"><small>Inscriu-t\'hi ara!</small></a></li>';
 							new_page += '</ul></div>';
 							//if(some_content == false) { some_content = true; }
 						});
