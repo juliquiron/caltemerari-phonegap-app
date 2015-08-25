@@ -127,7 +127,9 @@ p,
 h4 {
 	white-space: normal !important;
 }
-.ui-grid-a {
+.ui-grid-a img {
+	border-radius: 50%;
+	width: 80%;
 }
 .ui-grid-a a {
 	text-align: center;
